@@ -1,18 +1,18 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import { loginUser } from '../services/authService';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Create a navigate instance
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       await loginUser(email, password);
       alert('Login successful!');
-      navigate('/dashboard'); // Redirect to dashboard after successful login
+      navigate('/dashboard'); //dashboard after login
     } catch (error: any) {
       alert(error.message);
     }

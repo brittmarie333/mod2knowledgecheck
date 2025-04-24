@@ -2,17 +2,17 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { User, onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 
-// Define the context type
+
 interface AuthContextType {
   user: User | null;
   loading: boolean;
   logout: () => Promise<void>;
 }
 
-// Create the context
+
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Provider component
+//provider
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// Custom hook for easy access
+//custom hook 
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

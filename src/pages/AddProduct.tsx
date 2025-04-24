@@ -1,4 +1,4 @@
-// src/pages/AddProduct.tsx
+
 import { useState } from 'react';
 import { addProduct, updateProduct, ProductData } from '../services/productService';
 import { useNavigate } from 'react-router-dom';
@@ -17,15 +17,15 @@ const AddProduct = ({ product, onSave }: { product?: ProductData, onSave: () => 
     const newProduct = { name, description, price, stock, image };
     
     if (product?.id) {
-      // Update existing product
+      //update product
       await updateProduct(product.id, newProduct);
     } else {
-      // Add new product
+      //add new product
       await addProduct(newProduct);
     }
 
     onSave();
-    navigate('/'); // Redirect to the homepage or products list
+    navigate('/'); //redirect to home page 
   };
 
   return (

@@ -9,7 +9,7 @@ import {
 } from 'firebase/firestore';
 import { OrderData } from '../types/Order';
 
-// Add a new order
+
 export const placeOrder = async (order: Omit<OrderData, 'id'>) => {
   const orderWithTimestamp = {
     ...order,
@@ -18,7 +18,7 @@ export const placeOrder = async (order: Omit<OrderData, 'id'>) => {
   await addDoc(collection(db, 'orders'), orderWithTimestamp);
 };
 
-// Fetch all orders for a specific user
+// fetch all orders for a SPECIFIC user 
 export const getUserOrders = async (userId: string): Promise<OrderData[]> => {
   const q = query(collection(db, 'orders'), where('userId', '==', userId));
   const snapshot = await getDocs(q);
@@ -26,6 +26,6 @@ export const getUserOrders = async (userId: string): Promise<OrderData[]> => {
   return snapshot.docs.map((doc) => ({
     id: doc.id,
     ...(doc.data() as Omit<OrderData, 'id'>),
-    createdAt: doc.data().createdAt.toDate(), // Convert Firestore timestamp to JS Date
+    createdAt: doc.data().createdAt.toDate(), // convert firestore timestamp to date
   }));
 };

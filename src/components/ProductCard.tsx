@@ -1,7 +1,8 @@
-// src/components/ProductCard.tsx
+
 import { ReactNode } from 'react';
 import { ProductData } from '../types/Product';
 
+//so many issues trying to access the products in firestore, debugged with chatgpt to figure out a workaround
 interface Props {
   product: ProductData;
   onDelete?: (id: string) => void;

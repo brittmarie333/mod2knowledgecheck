@@ -1,8 +1,8 @@
-// src/pages/Home.tsx
+
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure this is in main.tsx if not here
-import 'bootstrap/dist/js/bootstrap.bundle.min'; // Needed for carousel functionality
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/js/bootstrap.bundle.min'; 
 
 const Home = () => {
   const { user } = useAuth();

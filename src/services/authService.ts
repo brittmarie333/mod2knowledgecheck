@@ -7,7 +7,7 @@ import {
 } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
-// Register New User & Save to Firestore
+// register new user and save to firestore
 export const registerUser = async (email: string, password: string, name: string): Promise<UserCredential> => {
   const userCredential = await createUserWithEmailAndPassword(auth, email, password);
   const user = userCredential.user;
@@ -22,9 +22,9 @@ export const registerUser = async (email: string, password: string, name: string
   return userCredential;
 };
 
-// Log In
+
 export const loginUser = (email: string, password: string) =>
   signInWithEmailAndPassword(auth, email, password);
 
-// Log Out
+
 export const logoutUser = () => signOut(auth);

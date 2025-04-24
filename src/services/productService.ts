@@ -1,4 +1,4 @@
-// src/services/productService.ts
+
 import { db } from '../firebase';
 import {
   collection,
@@ -18,7 +18,7 @@ export interface ProductData {
   image?: string;
 }
 
-// Fetching products
+//fetch products
 export const getProducts = async (): Promise<ProductData[]> => {
   const snapshot = await getDocs(collection(db, 'products'));
   const products: ProductData[] = [];
@@ -31,7 +31,7 @@ export const getProducts = async (): Promise<ProductData[]> => {
   return products;
 };
 
-// Add a new product
+//add product
 export const addProduct = async (product: ProductData) => {
   const docRef = await addDoc(collection(db, 'products'), product);
   return docRef.id;
@@ -50,7 +50,7 @@ export const updateProduct = async (id: string, updatedProduct: ProductData) => 
   });
 };
 
-// Delete a product by ID
+//delete product
 export const deleteProduct = async (id: string) => {
   const productRef = doc(db, 'products', id);
   await deleteDoc(productRef);

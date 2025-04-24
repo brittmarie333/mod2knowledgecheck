@@ -1,4 +1,4 @@
-// services/userService.ts
+
 import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 
@@ -14,12 +14,12 @@ export const getUserProfile = async (uid: string): Promise<UserProfileData | nul
   
   return userDoc.exists() ? (userDoc.data() as UserProfileData) : null;
 };
-
+//update user
 export const updateUserProfile = async (uid: string, data: { name?: string; address?: string }) => {
   const userRef = doc(db, 'users', uid);
   await updateDoc(userRef, data);
 };
-
+//delete user
 export const deleteUserProfile = async (uid: string) => {
   await deleteDoc(doc(db, 'users', uid));
 };

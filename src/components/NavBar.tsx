@@ -5,7 +5,7 @@ const Navbar = () => {
   const { user, logout } = useAuth();
 
   const handleLogout = () => {
-    logout(); // Call the logout function from your context
+    logout(); 
   };
 
   return (
