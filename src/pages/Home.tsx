@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="container mt-4" style={{ maxWidth: '600px'}}>
       <h1 className="text-center mb-4">Welcome to Grounded!</h1>
-      <h4>Grounded keeps your flow fresh — stylish yoga + Pilates wear and water bottles that move with you. Feel good, look good, hydrate often.</h4>
+      <h4>Grounded keeps your flow fresh — stylish Yoga + Pilates gear that moves with you. Feel good, look good, hydrate often.Rember, stay Grounded.</h4>
 
       <div id="homeCarousel" className="carousel slide mb-5" data-bs-ride="carousel">
         <div className="carousel-inner">
